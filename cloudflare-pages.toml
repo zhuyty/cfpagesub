@@ -1,0 +1,21 @@
+# Cloudflare Pages 配置文件
+# 这个文件专门用于 Cloudflare Pages 部署
+
+[build]
+  command = "chmod +x build-cf.sh && ./build-cf.sh"
+  publish = "www/.next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+  PNPM_VERSION = "9"
+
+[env.production]
+  NODE_ENV = "production"
+  DEPLOY_ENV = "cloudflare"
+  WASM_DEBUG = "false"
+
+[env.preview]
+  NODE_ENV = "development"
+  DEPLOY_ENV = "cloudflare"
+  WASM_DEBUG = "true"
