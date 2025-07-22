@@ -18,7 +18,7 @@ npm run build
 echo "🧹 Cleaning up large files..."
 
 # Remove cache directory
-rm -rf .next/cache
+rm -rf .next/cache 2>/dev/null || true
 
 # Remove large webpack files
 find .next -name "*.pack" -size +20M -delete 2>/dev/null || true
@@ -32,6 +32,12 @@ rm -rf .next/trace 2>/dev/null || true
 
 # Show final size
 echo "📊 Final build size:"
-du -sh .next 2>/dev/null || echo "Build directory size check failed"
+if [ -d "out" ]; then
+    du -sh out 2>/dev/null || echo "Out directory size check failed"
+elif [ -d ".next" ]; then
+    du -sh .next 2>/dev/null || echo "Next directory size check failed"
+else
+    echo "No build output directory found"
+fi
 
 echo "✅ Build completed and cleaned!"
