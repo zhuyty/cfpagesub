@@ -39,29 +39,9 @@
    - 点击 "Save and Deploy"
    - 等待构建完成（大约 5-10 分钟）
 
-### 方法二：使用简化配置（推荐）
+### 方法二：手动配置（推荐）
 
-如果上述方法失败，请尝试以下配置：
-
-**构建命令：**
-```bash
-npm install -g pnpm && cd www && pnpm install && pnpm build
-```
-
-**输出目录：**
-```
-www/.next
-```
-
-**环境变量：**
-```
-NODE_VERSION=20
-PNPM_VERSION=9
-NODE_ENV=production
-DEPLOY_ENV=cloudflare
-```
-
-### 方法三：最简化配置（如果仍然失败）
+如果自动配置失败，请手动设置以下配置：
 
 **构建命令：**
 ```bash
@@ -77,6 +57,26 @@ www/.next
 ```
 NODE_VERSION=20
 NODE_ENV=production
+DEPLOY_ENV=cloudflare
+```
+
+### 方法三：使用 pnpm（如果需要）
+
+**构建命令：**
+```bash
+cd www && corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm build
+```
+
+**输出目录：**
+```
+www/.next
+```
+
+**环境变量：**
+```
+NODE_VERSION=20
+NODE_ENV=production
+DEPLOY_ENV=cloudflare
 ```
 
 ## 🔧 故障排除

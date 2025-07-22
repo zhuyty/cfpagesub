@@ -14,6 +14,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@netlify/blobs": "^8.2.0",
     "@netlify/functions": "^3.1.2",
+    "@tailwindcss/postcss": "^4.1.4",
     "@types/js-yaml": "^4.0.9",
     "@vercel/kv": "^3.0.0",
     "autoprefixer": "^10.4.21",
@@ -24,19 +25,18 @@
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "subconverter-wasm": "0.2.34"
+    "subconverter-wasm": "0.2.34",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@netlify/plugin-nextjs": "^5.10.6",
-    "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@types/webpack": "^5.28.5",
     "eslint": "^9.24.0",
     "eslint-config-next": "15.3.0",
-    "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
     "url": "^0.11.4"
   },
