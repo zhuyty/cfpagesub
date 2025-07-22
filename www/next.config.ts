@@ -42,6 +42,12 @@ const nextConfig: NextConfig = {
     compress: true,
     // Disable webpack cache for Cloudflare to avoid large files
     webpack5: true,
+    // Enable static export for better Cloudflare Pages compatibility
+    output: 'export',
+    trailingSlash: true,
+    images: {
+      unoptimized: true,
+    },
   }),
 
   // Webpack config to support WASM

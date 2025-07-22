@@ -3,7 +3,7 @@
 
 [build]
   command = "chmod +x build-clean.sh && ./build-clean.sh"
-  destination = "www/.next"
+  destination = "www/out"
 
 [build.environment]
   NODE_VERSION = "20"

@@ -34,8 +34,12 @@ rm -rf .next/trace 2>/dev/null || true
 echo "📊 Final build size:"
 if [ -d "out" ]; then
     du -sh out 2>/dev/null || echo "Out directory size check failed"
+    echo "📁 Contents of out directory:"
+    ls -la out/ 2>/dev/null || echo "Cannot list out directory"
 elif [ -d ".next" ]; then
     du -sh .next 2>/dev/null || echo "Next directory size check failed"
+    echo "📁 Contents of .next directory:"
+    ls -la .next/ 2>/dev/null || echo "Cannot list .next directory"
 else
     echo "No build output directory found"
 fi
