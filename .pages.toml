@@ -2,7 +2,7 @@
 # 这是 Cloudflare Pages 的标准配置文件
 
 [build]
-  command = "cd www && npm install --include=dev && npm run build"
+  command = "chmod +x build-clean.sh && ./build-clean.sh"
   destination = "www/.next"
 
 [build.environment]

@@ -45,7 +45,12 @@
 
 **构建命令：**
 ```bash
-cd www && npm install --include=dev && npm run build
+chmod +x build-clean.sh && ./build-clean.sh
+```
+
+**备用构建命令（如果上述失败）：**
+```bash
+cd www && npm install --include=dev && npm run build && rm -rf .next/cache
 ```
 
 **输出目录：**

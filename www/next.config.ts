@@ -34,6 +34,16 @@ const nextConfig: NextConfig = {
   // This ensures proper WASM loading in server environments like Netlify
   serverExternalPackages: ['subconverter-wasm', '../pkg'],
 
+  // Optimize for Cloudflare Pages
+  ...(isCloudflare && {
+    // Disable source maps in production to reduce file size
+    productionBrowserSourceMaps: false,
+    // Optimize bundle size
+    compress: true,
+    // Disable webpack cache for Cloudflare to avoid large files
+    webpack5: true,
+  }),
+
   // Webpack config to support WASM
   webpack: (config, { isServer, dev }) => {
     console.log(`⚙️ Configuring webpack (isServer: ${isServer}, dev: ${dev})`);
