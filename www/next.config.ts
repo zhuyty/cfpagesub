@@ -42,9 +42,7 @@ const nextConfig: NextConfig = {
     compress: true,
     // Disable webpack cache for Cloudflare to avoid large files
     webpack5: true,
-    // Enable static export for better Cloudflare Pages compatibility
-    output: 'export',
-    trailingSlash: true,
+    // Use standard Next.js build for Cloudflare Pages with @cloudflare/next-on-pages
     images: {
       unoptimized: true,
     },

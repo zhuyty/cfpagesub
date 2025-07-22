@@ -14,6 +14,10 @@ npm install --include=dev
 echo "🏗️ Building Next.js application..."
 npm run build
 
+# Build for Cloudflare Pages
+echo "🌐 Building for Cloudflare Pages..."
+npx @cloudflare/next-on-pages
+
 # Clean up large files to meet Cloudflare Pages limits
 echo "🧹 Cleaning up large files..."
 

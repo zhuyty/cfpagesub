@@ -3,7 +3,7 @@
 
 [build]
   command = "chmod +x build-clean.sh && ./build-clean.sh"
-  destination = "www/out"
+  destination = "www/.vercel/output/static"
 
 [build.environment]
   NODE_VERSION = "20"
