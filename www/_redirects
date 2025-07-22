@@ -1,0 +1,12 @@
+# Redirects for Cloudflare Pages
+
+# API routes - handled by Next.js
+/api/* /api/:splat 200
+
+# Legacy API compatibility
+/sub /api/sub 301
+/surge2clash /api/surge2clash 301
+/getprofile /api/getprofile 301
+
+# SPA fallback for client-side routing
+/* /index.html 200

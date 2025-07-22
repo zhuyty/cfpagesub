@@ -1,0 +1,33 @@
+# Cloudflare Pages configuration for subconverter-rs
+name = "subconverter-rs"
+compatibility_date = "2024-01-01"
+
+# Build configuration
+[build]
+command = "cd www && pnpm install && pnpm build"
+cwd = "."
+watch_dir = "www"
+
+# Environment variables for Cloudflare Pages
+[env.production.vars]
+NODE_ENV = "production"
+DEPLOY_ENV = "cloudflare"
+WASM_DEBUG = "false"
+
+[env.preview.vars]
+NODE_ENV = "development"
+DEPLOY_ENV = "cloudflare"
+WASM_DEBUG = "true"
+
+# Pages Functions configuration
+[[pages_build_output_dir]]
+value = "www/.next"
+
+# Compatibility flags
+compatibility_flags = ["nodejs_compat"]
+
+# KV namespace bindings (optional, for storing configurations)
+# [[kv_namespaces]]
+# binding = "SUBCONVERTER_KV"
+# id = "your-kv-namespace-id"
+# preview_id = "your-preview-kv-namespace-id"
