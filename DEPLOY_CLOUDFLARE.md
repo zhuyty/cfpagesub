@@ -12,6 +12,8 @@
    - 选择 `zhuyty/cfpagesub` 仓库
    - 点击 "Begin setup"
 
+**注意：** 项目现在包含 `.pages.toml` 配置文件，Cloudflare Pages 会自动读取这个配置。
+
 3. **配置构建设置**
    ```
    Framework preset: Next.js
@@ -20,6 +22,8 @@
    Root directory: (留空)
    Node.js version: 20
    ```
+
+   **重要提示：** 不要使用 wrangler.toml 中的 build 配置，直接在 Cloudflare Pages Dashboard 中配置构建命令。
 
 4. **设置环境变量**
    在 "Environment variables" 部分添加：
@@ -35,13 +39,13 @@
    - 点击 "Save and Deploy"
    - 等待构建完成（大约 5-10 分钟）
 
-### 方法二：使用简化配置
+### 方法二：使用简化配置（推荐）
 
 如果上述方法失败，请尝试以下配置：
 
 **构建命令：**
 ```bash
-cd www && npm install -g pnpm && pnpm install && pnpm build
+npm install -g pnpm && cd www && pnpm install && pnpm build
 ```
 
 **输出目录：**
@@ -53,6 +57,25 @@ www/.next
 ```
 NODE_VERSION=20
 PNPM_VERSION=9
+NODE_ENV=production
+DEPLOY_ENV=cloudflare
+```
+
+### 方法三：最简化配置（如果仍然失败）
+
+**构建命令：**
+```bash
+cd www && npm install && npm run build
+```
+
+**输出目录：**
+```
+www/.next
+```
+
+**环境变量：**
+```
+NODE_VERSION=20
 NODE_ENV=production
 ```
 

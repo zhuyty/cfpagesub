@@ -2,9 +2,6 @@ name = "subconverter-rs"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "www/.next"
 
-[build]
-command = "chmod +x scripts/build-cloudflare.sh && ./scripts/build-cloudflare.sh"
-
 [env.production.vars]
 NODE_ENV = "production"
 DEPLOY_ENV = "cloudflare"

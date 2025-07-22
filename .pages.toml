@@ -1,0 +1,23 @@
+# Cloudflare Pages 配置文件
+# 这是 Cloudflare Pages 的标准配置文件
+
+[build]
+  command = "npm install -g pnpm && cd www && pnpm install && pnpm build"
+  destination = "www/.next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PNPM_VERSION = "9"
+  NODE_ENV = "production"
+  DEPLOY_ENV = "cloudflare"
+  WASM_DEBUG = "false"
+
+[env.production]
+  NODE_ENV = "production"
+  DEPLOY_ENV = "cloudflare"
+  WASM_DEBUG = "false"
+
+[env.preview]
+  NODE_ENV = "development"
+  DEPLOY_ENV = "cloudflare"
+  WASM_DEBUG = "true"
