@@ -2,7 +2,7 @@
 # 这是 Cloudflare Pages 的标准配置文件
 
 [build]
-  command = "cd www && npm install && npm run build"
+  command = "cd www && npm install --include=dev && npm run build"
   destination = "www/.next"
 
 [build.environment]

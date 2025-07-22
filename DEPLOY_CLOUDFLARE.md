@@ -45,7 +45,7 @@
 
 **构建命令：**
 ```bash
-cd www && npm install && npm run build
+cd www && npm install --include=dev && npm run build
 ```
 
 **输出目录：**
